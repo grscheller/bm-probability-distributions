@@ -1,9 +1,9 @@
-# Daddy's boring math libraries - probability distributions
+# Boring Math Libraries - Probability distributions
 
 Package to generate and visualize probability distributions.
 
 Part of the "Boring Math" PyPI **bm** namespace for mathematical hobby
-projects.
+projects. A work-in-progress.
 
 * **Repositories**
   * [bm.probability-distributions][1] project on *PyPI*
@@ -24,6 +24,7 @@ originally derived from Udacity exercises.
 
 ---
 
-[1]: https://pypi.org/project/bm.integer-math/
-[2]: https://github.com/grscheller/bm-integer-math/
-[3]: https://grscheller.github.io/boring-math-docs/integer-math/
+[1]: https://pypi.org/project/bm.probability-distributions/
+[2]: https://github.com/grscheller/bm-probability-distributions/
+[3]: https://grscheller.github.io/boring-math-docs/probability-distributions/
+
