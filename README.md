@@ -2,14 +2,12 @@
 
 Package to generate and visualize probability distributions.
 
-Part of the "Boring Math" PyPI **bm** namespace for mathematical hobby
-projects. A work-in-progress.
-
 * **Repositories**
   * [bm.probability-distributions][1] project on *PyPI*
   * [Source code][2] on *GitHub*
 * **Detailed documentation**
   * [Detailed API documentation][3] on *GH-Pages*
+
 This project is part of the
 [Boring Math][4] **bm.** namespace project.
 
