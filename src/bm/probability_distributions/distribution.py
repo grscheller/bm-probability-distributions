@@ -21,7 +21,7 @@
 from __future__ import annotations
 
 from abc import ABC, abstractmethod
-from typing import Callable, Self
+from typing import Callable, Self, Never
 from math import comb, sqrt
 import matplotlib.pyplot as plt
 from .datasets import DataSet
@@ -44,7 +44,7 @@ class ContDist(ABC):
        """Cumulative distribution function."""
 
     @abstractmethod
-    def __add__(self, other: Self) -> Self:
+    def __add__(self, other: Self) -> Self|Never:
         """Add together two compatible distributions."""
         ...
 
@@ -85,7 +85,7 @@ class DiscreteDist(ABC):
        """Cumulative distribution function."""
 
     @abstractmethod
-    def __add__(self, other: Self) -> Self:
+    def __add__(self, other: Self) -> Self|Never:
         """Add together two compatible distributions."""
         ...
 

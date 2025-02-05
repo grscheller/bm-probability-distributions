@@ -15,6 +15,7 @@
 """
    * Continuous Distributions
      * Normal  bm.probability_distributions.distributions.normal
+     * Uniform  bm.probability_distributions.distributions.uniform
 
    * Discrete Distributions
      * Binomial: bm.probability_distributions.distributions.binomial

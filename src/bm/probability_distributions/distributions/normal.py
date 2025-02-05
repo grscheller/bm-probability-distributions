@@ -20,6 +20,7 @@
 
 from __future__ import annotations
 
+from typing import Never
 from math import erf, exp, pi, sqrt
 import matplotlib.pyplot as plt
 from ..datasets import DataSet
@@ -68,7 +69,7 @@ class Normal(ContDist):
         c = self.sigma * sqrt(2)
         return 0.5*(1 + erf((x - mu)/c))
 
-    def __add__(self, other: Normal) -> Normal:
+    def __add__(self, other: Normal) -> Normal|Never:
         """Add together two Normal distributions."""
         if type(other) is not Normal:
             msg = 'A Normal distribution cannot be added to a {}'
