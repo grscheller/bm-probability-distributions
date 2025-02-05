@@ -26,7 +26,7 @@ import matplotlib.pyplot as plt
 from ..datasets import DataSet
 from ..distribution import ContDist
 
-__all__ = ['Normal']
+__all__ = ['Uniform']
 
 class Uniform(ContDist):
     """ Class for visualizing Normal distributions.
@@ -48,7 +48,7 @@ class Uniform(ContDist):
             msg = 'For a Uniorm distribution, b > a'
             raise ValueError(msg)
 
-        self.mu = (a+b)/2:
+        self.mu = (a+b)/2
         self.sigma = (b-a)/(2*sqrt(3))
         self.a = a
         self.b = b
