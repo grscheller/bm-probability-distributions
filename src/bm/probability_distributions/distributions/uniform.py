@@ -33,6 +33,7 @@ class Uniform(ContDist):
 
     The Uniform distribution is a continuous probability
     distribution with probability density function
+
     ```
        f(x) = 1/(b-a)  for a < x < b
        f(x) = 0        otherwise
@@ -43,7 +44,7 @@ class Uniform(ContDist):
     * σ = sigma = (b-a)/2√3 = standard deviation
 
     """
-    def __init__(self, b: float=0.0, a: float=1.0):
+    def __init__(self, a: float=0.0, b: float=1.0):
         if b <= a:
             msg = 'For a Uniorm distribution, b > a'
             raise ValueError(msg)

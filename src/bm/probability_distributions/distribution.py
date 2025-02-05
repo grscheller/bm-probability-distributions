@@ -37,11 +37,13 @@ class ContDist(ABC):
 
     @abstractmethod
     def pdf(self, kf: float) -> float:
-       """Probability distribution function."""
+        """Probability distribution function."""
+        ...
 
     @abstractmethod
     def cdf(self, kf: float) -> float:
-       """Cumulative distribution function."""
+        """Cumulative distribution function."""
+        ...
 
     @abstractmethod
     def __add__(self, other: Self) -> Self|Never:
@@ -78,11 +80,13 @@ class DiscreteDist(ABC):
 
     @abstractmethod
     def pdf(self, kf: float) -> float:
-       """Probability distribution function."""
+        """Probability distribution function."""
+        ...
 
     @abstractmethod
     def cdf(self, kf: float) -> float:
-       """Cumulative distribution function."""
+        """Cumulative distribution function."""
+        ...
 
     @abstractmethod
     def __add__(self, other: Self) -> Self|Never:
