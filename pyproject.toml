@@ -20,7 +20,7 @@ classifiers = [
     "Programming Language :: Python :: 3.13",
     "Typing :: Typed"
 ]
-dependencies = ["dtools.fp"]
+dependencies = ["dtools.fp >= 0.4.0, < 0.5"]
 dynamic = ["version", "description"]
 keywords = ["probability distributions", "distribution", "sample data"]
 
