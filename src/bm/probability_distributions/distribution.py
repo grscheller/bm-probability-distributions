@@ -21,16 +21,17 @@
 from __future__ import annotations
 
 from abc import ABC, abstractmethod
-from typing import Callable, Self, Never
-from math import comb, sqrt
+from typing import Self, Never
 import matplotlib.pyplot as plt
 from .datasets import DataSet
 from dtools.fp.err_handling import MB
 
-__all__ = [ 'ContDist', 'DiscreteDist' ]
+__all__ = ['ContDist', 'DiscreteDist']
+
 
 class ContDist(ABC):
-    """ Base class for visualizing probability distributions."""
+    """Base class for visualizing probability distributions."""
+
     def __init__(self) -> None:
         self.population: MB[DataSet] = MB()
         self.samples: list[DataSet] = []
@@ -46,9 +47,10 @@ class ContDist(ABC):
         ...
 
     @abstractmethod
-    def __add__(self, other: Self) -> Self|Never:
+    def __add__(self, other: Self) -> Self | Never:
         """Add together two compatible distributions."""
         ...
+
 
 #    def plot_bar_data(self) -> None: ...
 
@@ -72,8 +74,10 @@ class ContDist(ABC):
 #
 #        return xs, ys
 
+
 class DiscreteDist(ABC):
-    """ Base class for visualizing probability distributions."""
+    """Base class for visualizing probability distributions."""
+
     def __init__(self) -> None:
         self.population: MB[DataSet] = MB()
         self.samples: list[DataSet] = []
@@ -89,7 +93,6 @@ class DiscreteDist(ABC):
         ...
 
     @abstractmethod
-    def __add__(self, other: Self) -> Self|Never:
+    def __add__(self, other: Self) -> Self | Never:
         """Add together two compatible distributions."""
         ...
-

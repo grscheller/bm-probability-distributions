@@ -16,7 +16,7 @@
 # Udacity® (https://www.udacity.com/)
 #
 
-"""Normal Distribution class - derived from Udacity exercise template. """
+"""Normal Distribution class - derived from Udacity exercise template."""
 
 from __future__ import annotations
 
@@ -28,8 +28,9 @@ from ..distribution import ContDist
 
 __all__ = ['Normal']
 
+
 class Normal(ContDist):
-    """ Class for visualizing Normal distributions.
+    """Class for visualizing Normal distributions.
 
     The Normal, also called Gaussian, distribution is a continuous probability
     distribution with probability density function
@@ -42,7 +43,8 @@ class Normal(ContDist):
     * σ = sigma = standard deviation of the distribution
 
     """
-    def __init__(self, mu: float=0.0, sigma: float=1.0):
+
+    def __init__(self, mu: float = 0.0, sigma: float = 1.0):
         if sigma <= 0:
             msg = 'For a Normal distribution, sigma must be greater than 0'
             raise ValueError(msg)
@@ -53,23 +55,23 @@ class Normal(ContDist):
         super().__init__()
 
     def __repr__(self) -> str:
-        repr_str = "mean {}, standard deviation {}"
+        repr_str = 'mean {}, standard deviation {}'
         return repr_str.format(self.mu, self.sigma)
 
     def pdf(self, x: float) -> float:
         """Normal probability distribution function."""
-        c = 1.0/sqrt(2*pi)
+        c = 1.0 / sqrt(2 * pi)
         mu = self.mu
         sigma = self.sigma
-        return (c/sigma)*exp(-0.5*((x - mu)/sigma)**2)
+        return (c / sigma) * exp(-0.5 * ((x - mu) / sigma) ** 2)
 
     def cdf(self, x: float) -> float:
         """Normal cumulative probability distribution function."""
         mu = self.mu
         c = self.sigma * sqrt(2)
-        return 0.5*(1 + erf((x - mu)/c))
+        return 0.5 * (1 + erf((x - mu) / c))
 
-    def __add__(self, other: Normal) -> Normal|Never:
+    def __add__(self, other: Normal) -> Normal | Never:
         """Add together two Normal distributions."""
         if type(other) is not Normal:
             msg = 'A Normal distribution cannot be added to a {}'
@@ -77,6 +79,7 @@ class Normal(ContDist):
             raise TypeError(msg)
 
         return Normal(self.mu + other.mu, sqrt(self.sigma**2 + other.sigma**2))
+
 
 #   def plot_histogram_data(self) -> None:
 #       """Produce a histogram of the data using the matplotlib pyplot library."""
@@ -126,4 +129,3 @@ class Normal(ContDist):
 #       plt.show()
 
 #       return x, y
-

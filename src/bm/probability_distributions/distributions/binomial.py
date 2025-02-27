@@ -20,7 +20,7 @@
 
 from __future__ import annotations
 
-from typing import Callable, Never
+from typing import Callable, Never, reveal_type
 from math import comb, sqrt
 import matplotlib.pyplot as plt
 from ..datasets import DataSet
@@ -28,8 +28,9 @@ from ..distribution import DiscreteDist
 
 __all__ = ['Binomial']
 
+
 class Binomial(DiscreteDist):
-    """ Class for visualizing data as Binomial distributions.
+    """Class for visualizing data as Binomial distributions.
 
     The binomial distribution represents the number of events with
     probability `p` happening in `n` numbers of trials.
@@ -43,7 +44,8 @@ class Binomial(DiscreteDist):
     * `n` (int) the total number of trials
 
     """
-    def __init__(self, p: float=0.5, n: int=20):
+
+    def __init__(self, p: float = 0.5, n: int = 20):
         if not (0.0 <= p <= 1.0) or n < 1:
             msg1 = 'For a binomial distribution, '
             msg2 = msg3 = ''
@@ -67,7 +69,7 @@ class Binomial(DiscreteDist):
         k = int(kf)
         n = self.n
         p = self.p
-        return comb(n, k)*(p**k)*(1 - p)**(n-k)
+        return comb(n, k) * (p**k) * (1 - p) ** (n - k)
 
     def cdf(self, kf: float) -> float:
         """Binomial cumulative probability distribution function."""
@@ -77,14 +79,14 @@ class Binomial(DiscreteDist):
         """Calculate the mean from p and n"""
         n = self.n
         p = self.p
-        self.mean = mean = n*p
+        self.mean = mean = n * p
         return mean
 
     def calculate_stdev(self) -> float:
         """Calculate the standard deviation using p and n"""
         n = self.n
         p = self.p
-        self.stdev = stdev = sqrt(n*p*(1-p))
+        self.stdev = stdev = sqrt(n * p * (1 - p))
         return stdev
 
     def replace_stats_from_dataset(self, dset: DataSet) -> tuple[float, int]:
@@ -94,9 +96,9 @@ class Binomial(DiscreteDist):
         """
         if dset:
             self.n = n = dset._size
-            self.p = p = sum(dset._data)/n
-            self.mean = n*p
-            self.stdev = sqrt(n*p*(1-p))
+            self.p = p = sum(dset._data) / n
+            self.mean = n * p
+            self.stdev = sqrt(n * p * (1 - p))
         return self.p, self.n
 
     def plot_bar_data(self) -> None:
@@ -105,7 +107,7 @@ class Binomial(DiscreteDist):
         p = self.p
 
         fig, axis = plt.subplots()
-        axis.bar(('0', '1'), (n*(1-p), n*p), color ='maroon', width = 0.6)
+        axis.bar(('0', '1'), (n * (1 - p), n * p), color='maroon', width=0.6)
         axis.set_title('Failures and Successes for a sample of {}'.format(n))
         axis.set_xlabel('prob = {}, n = {}'.format(p, n))
         axis.set_ylabel('Sample Count')
@@ -115,15 +117,18 @@ class Binomial(DiscreteDist):
         """Function to plot the pdf of the binomial distribution.
 
         Returns:
-            list: x values used for the pdf plot
-            list: y values used for the pdf plot
+        * list: x values used for the pdf plot
+        * list: y values used for the pdf plot
+
         """
-        pdf: Callable[[int], float] = lambda ii: self.pdf(float(ii))
+
+        def pdf(ii: int) -> float:
+            return self.pdf(float(ii))
 
         xs: list[int] = list(range(self.n + 1))
         ys: list[float] = list(map(pdf, range(self.n + 1)))
 
-        plt.bar(list(str(x) for x in xs), ys, color ='maroon', width = 0.4)
+        plt.bar(list(str(x) for x in xs), ys, color='maroon', width=0.4)
         plt.title('Probability Density of Success')
         plt.xlabel('Successes for {} trials'.format(self.n))
         plt.ylabel('Probability')
@@ -131,7 +136,7 @@ class Binomial(DiscreteDist):
 
         return xs, ys
 
-    def __add__(self, other: Binomial) -> Binomial|Never:
+    def __add__(self, other: Binomial) -> Binomial | Never:
         """Add together two Binomial distributions with equal p."""
         if type(other) is not Binomial:
             msg = 'A binomial distribution cannot be added to a {}'
@@ -150,4 +155,3 @@ class Binomial(DiscreteDist):
     def __str__(self) -> str:
         user_str = 'mean {}, standard deviation {}, p {}, n {}'
         return user_str.format(self.mean, self.stdev, self.p, self.n)
-

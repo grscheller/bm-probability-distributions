@@ -25,9 +25,10 @@ from collections.abc import Iterator
 from typing import Never
 from dtools.fp.err_handling import MB
 
-__all__ = [ 'DataSet', 'DataSets' ]
+__all__ = ['DataSet', 'DataSets']
 
-class DataSet():
+
+class DataSet:
     """Class containing sample or population data.
 
     * all data internally stored as floats (even integer data)
@@ -38,8 +39,9 @@ class DataSet():
       * add or remove data
 
     """
+
     @staticmethod
-    def read_data_from_file(file_name: str, sample: bool = False) -> DataSet:
+    def read_data_from_file(file_name: str, sample: bool = False) -> MB[DataSet]:
         """Read in data from a text file, return a DataSet object.
 
         The text file should
@@ -63,13 +65,17 @@ class DataSet():
         except ValueError as esc:
             raise RuntimeError('Error parsing "{}"'.format(file_name)) from esc
         except FileNotFoundError as esc:
-            raise RuntimeError('Can\'t find file data file "{}"'.format(file_name)) from esc
+            raise RuntimeError(
+                'Can\'t find file data file "{}"'.format(file_name)
+            ) from esc
         except PermissionError as esc:
-            raise RuntimeError('No read permissiona for data file "{}"'.format(file_name)) from esc
+            raise RuntimeError(
+                'No read permissiona for data file "{}"'.format(file_name)
+            ) from esc
         else:
             return MB(DataSet(*data, sample=sample))
 
-    def __init__(self, *data: int|float, sample: bool = False) -> None:
+    def __init__(self, *data: int | float, sample: bool = False) -> None:
         self._sample: bool = sample
         self._data = list(map(lambda d: float(d), data))
         self._size = len(self._data)
@@ -86,7 +92,7 @@ class DataSet():
     def _calculate_mean(self) -> MB[float]:
         """Calculate the mean of the data set, if it exists."""
         if self:
-            return MB(sum(self._data)/self._size)
+            return MB(sum(self._data) / self._size)
         else:
             return MB()
 
@@ -103,16 +109,16 @@ class DataSet():
             mean = self._mean.get()
             if self._sample:
                 if n > 1:
-                    return MB(math.sqrt(sum(((x - mean)**2 for x in data))/(n-1)))
+                    return MB(math.sqrt(sum(((x - mean) ** 2 for x in data)) / (n - 1)))
             else:
                 if n > 0:
-                    return MB(math.sqrt(sum(((x - mean)**2 for x in data))/n))
+                    return MB(math.sqrt(sum(((x - mean) ** 2 for x in data)) / n))
         return MB()
 
     def _calculate_quartiles(self) -> MB[tuple[float, float, float]]:
         """Calculate first, second (median), and third quartiles
 
-           * using the "trimmed mid-range" of the data
+        * using the "trimmed mid-range" of the data
 
         """
         n = self._size
@@ -122,12 +128,12 @@ class DataSet():
             r = q // 2
 
             if n % 2 == 0:
-                second = (data[q - 1] + data[q])/2.0
+                second = (data[q - 1] + data[q]) / 2.0
                 lower_half = data[:q]
                 upper_half = data[q:]
                 if q % 2 == 0:
-                    first = (lower_half[r - 1] + lower_half[r])/2.0
-                    third = (upper_half[r - 1] + upper_half[r])/2.0
+                    first = (lower_half[r - 1] + lower_half[r]) / 2.0
+                    third = (upper_half[r - 1] + upper_half[r]) / 2.0
                 else:
                     first = lower_half[(r)]
                     third = upper_half[(r)]
@@ -136,8 +142,8 @@ class DataSet():
                 lower_half = data[:q]
                 upper_half = data[q:]
                 if q % 2 == 0:
-                    first = (lower_half[r - 1] + lower_half[r])/2.0
-                    third = (upper_half[r - 1] + upper_half[r])/2.0
+                    first = (lower_half[r - 1] + lower_half[r]) / 2.0
+                    third = (upper_half[r - 1] + upper_half[r]) / 2.0
                 else:
                     first = lower_half[(r)]
                     third = upper_half[(r)]
@@ -171,23 +177,24 @@ class DataSet():
         return bool(self._quartiles)
 
     @property
-    def mean(self) -> float|Never:
+    def mean(self) -> float | Never:
         return self._mean.get()
 
     @property
-    def median(self) -> float|Never:
+    def median(self) -> float | Never:
         return self._median.get()
 
     @property
-    def stdev(self) -> float|Never:
+    def stdev(self) -> float | Never:
         return self._stdev.get()
 
     @property
-    def quartiles(self) -> tuple[float, float, float]|Never:
+    def quartiles(self) -> tuple[float, float, float] | Never:
         return self._quartiles.get()
 
-class DataSets():
-    """ Base class for managing data sets.
+
+class DataSets:
+    """Base class for managing data sets.
 
     * data sets can be samples or populations
     * methods provided to
@@ -196,6 +203,6 @@ class DataSets():
     * how they are related to each other is up to the user of the class
 
     """
+
     def __init__(self) -> None:
         self.data_sets: list[DataSet] = []
-

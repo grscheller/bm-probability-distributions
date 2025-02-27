@@ -28,8 +28,9 @@ from ..distribution import ContDist
 
 __all__ = ['Uniform']
 
+
 class Uniform(ContDist):
-    """ Class for visualizing Normal distributions.
+    """Class for visualizing Normal distributions.
 
     The Uniform distribution is a continuous probability
     distribution with probability density function
@@ -44,27 +45,28 @@ class Uniform(ContDist):
     * σ = sigma = (b-a)/2√3 = standard deviation
 
     """
-    def __init__(self, a: float=0.0, b: float=1.0):
+
+    def __init__(self, a: float = 0.0, b: float = 1.0):
         if b <= a:
             msg = 'For a Uniorm distribution, b > a'
             raise ValueError(msg)
 
-        self.mu = (a+b)/2
-        self.sigma = (b-a)/(2*sqrt(3))
+        self.mu = (a + b) / 2
+        self.sigma = (b - a) / (2 * sqrt(3))
         self.a = a
         self.b = b
 
         super().__init__()
 
     def __repr__(self) -> str:
-        repr_str = "mean {}, standard deviation {}"
+        repr_str = 'mean {}, standard deviation {}'
         return repr_str.format(self.mu, self.sigma)
 
     def pdf(self, x: float) -> float:
         """Uniform probability distribution function."""
         a = self.a
         b = self.b
-        c = 1.0/(b-a)
+        c = 1.0 / (b - a)
         if a < x < b:
             return c
         else:
@@ -74,17 +76,16 @@ class Uniform(ContDist):
         """Uniform cumulative probability distribution function."""
         a = self.a
         b = self.b
-        c = 1.0/(b-a)
+        c = 1.0 / (b - a)
         if x <= a:
             return 0
         elif x < b:
-            return c*(x-a)
+            return c * (x - a)
         else:
             return 1
 
-    def __add__(self, other: Uniform) -> Uniform|Never:
-        """Add together two compatible Uniform distributions.
-        """
+    def __add__(self, other: Uniform) -> Uniform | Never:
+        """Add together two compatible Uniform distributions."""
         if type(other) is not Uniform:
             msg = 'A Uniform distribution cannot be added to a {}'
             msg = msg.format(type(other))
@@ -101,5 +102,3 @@ class Uniform(ContDist):
             raise ValueError(msg)
 
         return Uniform(b, a)
-
-
