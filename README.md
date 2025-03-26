@@ -2,11 +2,18 @@
 
 Package to generate and visualize probability distributions.
 
-* **Repositories**
-  * [bm.probability-distributions][1] project on *PyPI*
-  * [Source code][2] on *GitHub*
-* **Detailed documentation**
-  * [Detailed API documentation][3] on *GH-Pages*
+## Repos and Documentation
+
+### Repos
+
+- [bm.probability-distributions][1] project on *PyPI*
+- [Source code][2] on *GitHub*
+
+### Detailed documentation
+
+- [Detailed API documentation][3] on *GH-Pages*
+
+## Overview
 
 This project is part of the
 [Boring Math][4] **bm.** namespace project.
@@ -14,15 +21,15 @@ This project is part of the
 Distributions can be compared to either sample or population data. Package
 originally derived from Udacity exercises.
 
-## Continuous Distributions
+### Continuous Distributions
 
-* Normal (Gaussian): bm.probability-distributions.continuous.gaussian
+- Normal (Gaussian): bm.probability-distributions.continuous.gaussian
 
-## Discrete Distributions
+### Discrete Distributions
 
-* Binomial: bm.probability-distributions.discrete.binomial
+- Binomial: bm.probability-distributions.discrete.binomial
 
----
+______________________________________________________________________
 
 [1]: https://pypi.org/project/bm.probability-distributions/
 [2]: https://github.com/grscheller/bm-probability-distributions/
