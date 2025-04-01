@@ -25,7 +25,7 @@ dynamic = ["version", "description"]
 keywords = ["probability distributions", "distribution", "sample data"]
 
 [project.optional-dependencies]
-tests = ["pytest >=8.3.2"]
+tests = ["pytest >=8.3.5"]
 
 [project.urls]
 Source = "https://github.com/grscheller/bm-probability-distributions"
