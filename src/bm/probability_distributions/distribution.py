@@ -16,7 +16,14 @@
 # Udacity® (https://www.udacity.com/)
 #
 
-"""Module for the Binomial class - derived from Udacity exercise template."""
+"""Module bm.probability_distributions.distribution
+
+Providing base classes to visualize probability distributions.
+
+- *class* ContDist: base class to visualize continuous pd
+- *class* DiscreteDist: base class to visualize discrete pd
+
+"""
 
 from __future__ import annotations
 
@@ -30,7 +37,7 @@ __all__ = ['ContDist', 'DiscreteDist']
 
 
 class ContDist(ABC):
-    """Base class for visualizing probability distributions."""
+    """Base class to visualize continuous probability distributions."""
 
     def __init__(self) -> None:
         self.population: MB[DataSet] = MB()
@@ -76,7 +83,7 @@ class ContDist(ABC):
 
 
 class DiscreteDist(ABC):
-    """Base class for visualizing probability distributions."""
+    """Base class to visuale discrete probability distributions."""
 
     def __init__(self) -> None:
         self.population: MB[DataSet] = MB()

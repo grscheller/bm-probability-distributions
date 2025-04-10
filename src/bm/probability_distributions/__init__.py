@@ -32,7 +32,7 @@ originally derived from a Udacity exercise.
 
 """
 
-__version__ = '0.5.1.0'
+__version__ = '0.5.1.1'
 __author__ = 'Geoffrey R. Scheller'
 __copyright__ = 'Copyright (c) 2024-2025 Geoffrey R. Scheller'
 __license__ = 'Apache License 2.0'

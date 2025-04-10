@@ -16,7 +16,11 @@
 # Udacity® (https://www.udacity.com/)
 #
 
-"""Uniform Distribution class"""
+"""### Module bm.probability_distributions.distributions.uniform
+
+Uniform distribution class - derived from a Udacity exercise template.
+
+"""
 
 from __future__ import annotations
 
@@ -41,8 +45,8 @@ class Uniform(ContDist):
     ```
     where
 
-    * μ = mu = (a+b)/2 = mean value
-    * σ = sigma = (b-a)/2√3 = standard deviation
+    - μ = mu = (a+b)/2 = mean value
+    - σ = sigma = (b-a)/2√3 = standard deviation
 
     """
 

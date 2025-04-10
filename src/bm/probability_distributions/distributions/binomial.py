@@ -16,7 +16,12 @@
 # Udacity® (https://www.udacity.com/)
 #
 
-"""Binomial Distribution class - derived from Udacity exercise template."""
+"""### Module bm.probability_distributions.binomial
+
+A binomial distribution class, derived from a Udacity
+exercise template.
+
+"""
 
 from __future__ import annotations
 

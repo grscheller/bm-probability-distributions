@@ -16,7 +16,12 @@
 # Udacity® (https://www.udacity.com/)
 #
 
-"""Module for managing sample or population data."""
+"""Module for - managing sample/population data
+
+- *class* DataSet: contains sample or population data
+- *class* DataSets: base class for managing data sets
+
+"""
 
 from __future__ import annotations
 
