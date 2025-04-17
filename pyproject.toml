@@ -18,18 +18,20 @@ classifiers = [
     "Programming Language :: Python :: 3.13",
     "Typing :: Typed",
 ]
-dependencies = [
-    "dtools.fp >= 1.6.0, < 1.7"
-]
 dynamic = ["version", "description"]
 keywords = [
     "probability distributions",
     "distribution",
     "sample data",
 ]
+dependencies = [
+    "dtools.fp >= 1.7.0, < 1.8",
+]
 
 [project.optional-dependencies]
-tests = ["pytest >=8.3.5"]
+tests = [
+    "pytest >=8.3.5",
+]
 
 [project.urls]
 Source = "https://github.com/grscheller/bm-probability-distributions"
