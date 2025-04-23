@@ -18,21 +18,21 @@
 Distributions can be compared to either sample or population data. Package
 originally derived from a Udacity exercise.
 
-* Class Dataset
-  * bm.distributions.dataset
-    * contains either sample or population data
-    * generates sample/population statistics
+- Class Dataset
+  - bm.distributions.dataset
+    - contains either sample or population data
+    - generates sample/population statistics
 
-* Abstract Class Distribution
-  * bm.probability_distributions.distribution
-    * represents a probability distribution
+- Abstract Class Distribution
+  - bm.probability_distributions.distribution
+    - represents a probability distribution
 
-* Concrete Distributions
-  * bm.probability_distributions.distributions
+- Concrete Distributions
+  - bm.probability_distributions.distributions
 
 """
 
-__version__ = '0.5.1.1'
+__version__ = '0.6.0'
 __author__ = 'Geoffrey R. Scheller'
 __copyright__ = 'Copyright (c) 2024-2025 Geoffrey R. Scheller'
 __license__ = 'Apache License 2.0'
