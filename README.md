@@ -15,19 +15,18 @@ Package to generate and visualize probability distributions.
 
 ## Overview
 
-This project is part of the
-[Boring Math][4] **bm.** namespace project.
+This project is part of the [Boring Math][4] namespace projects.
 
 Distributions can be compared to either sample or population data. Package
 originally derived from Udacity exercises.
 
-### Continuous Distributions
+### Continuous Distributions (bm.probability_distributions.continuous)
 
-- Normal (Gaussian): bm.probability-distributions.continuous.gaussian
+- Normal (Gaussian): gaussian
 
-### Discrete Distributions
+### Discrete Distributions (bm.probability-distributions.discrete)
 
-- Binomial: bm.probability-distributions.discrete.binomial
+- Binomial: binomial
 
 ______________________________________________________________________
 
