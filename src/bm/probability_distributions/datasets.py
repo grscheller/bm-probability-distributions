@@ -28,7 +28,7 @@ from __future__ import annotations
 import math
 from collections.abc import Iterator
 from typing import Never
-from dtools.fp.err_handling import MB
+from pythonic_fp.containers.maybe import MayBe
 
 __all__ = ['DataSet', 'DataSets']
 
@@ -46,7 +46,7 @@ class DataSet:
     """
 
     @staticmethod
-    def read_data_from_file(file_name: str, sample: bool = False) -> MB[DataSet]:
+    def read_data_from_file(file_name: str, sample: bool = False) -> MayBe[DataSet]:
         """Read in data from a text file, return a DataSet object.
 
         The text file should
@@ -78,7 +78,7 @@ class DataSet:
                 'No read permissiona for data file "{}"'.format(file_name)
             ) from esc
         else:
-            return MB(DataSet(*data, sample=sample))
+            return MayBe(DataSet(*data, sample=sample))
 
     def __init__(self, *data: int | float, sample: bool = False) -> None:
         self._sample: bool = sample
@@ -94,14 +94,14 @@ class DataSet:
         self._quartiles = self._calculate_quartiles()
         self._median = self._quartiles.map(lambda t: t[1])
 
-    def _calculate_mean(self) -> MB[float]:
+    def _calculate_mean(self) -> MayBe[float]:
         """Calculate the mean of the data set, if it exists."""
         if self:
-            return MB(sum(self._data) / self._size)
+            return MayBe(sum(self._data) / self._size)
         else:
-            return MB()
+            return MayBe()
 
-    def _calculate_stdev(self) -> MB[float]:
+    def _calculate_stdev(self) -> MayBe[float]:
         """From the data set, calculate & return the stdev if it exists.
 
         * If sample is True, calculate a sample standard deviation.
@@ -114,13 +114,13 @@ class DataSet:
             mean = self._mean.get()
             if self._sample:
                 if n > 1:
-                    return MB(math.sqrt(sum(((x - mean) ** 2 for x in data)) / (n - 1)))
+                    return MayBe(math.sqrt(sum(((x - mean) ** 2 for x in data)) / (n - 1)))
             else:
                 if n > 0:
-                    return MB(math.sqrt(sum(((x - mean) ** 2 for x in data)) / n))
-        return MB()
+                    return MayBe(math.sqrt(sum(((x - mean) ** 2 for x in data)) / n))
+        return MayBe()
 
-    def _calculate_quartiles(self) -> MB[tuple[float, float, float]]:
+    def _calculate_quartiles(self) -> MayBe[tuple[float, float, float]]:
         """Calculate first, second (median), and third quartiles
 
         * using the "trimmed mid-range" of the data
@@ -153,9 +153,9 @@ class DataSet:
                     first = lower_half[(r)]
                     third = upper_half[(r)]
 
-            return MB((first, second, third))
+            return MayBe((first, second, third))
         else:
-            return MB()
+            return MayBe()
 
     def __bool__(self) -> bool:
         return self._size > 0

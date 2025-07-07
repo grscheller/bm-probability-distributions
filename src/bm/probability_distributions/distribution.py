@@ -31,7 +31,7 @@ from abc import ABC, abstractmethod
 from typing import Self, Never
 import matplotlib.pyplot as plt
 from .datasets import DataSet
-from dtools.fp.err_handling import MB
+from pythonic_fp.containers.maybe import MayBe
 
 __all__ = ['ContDist', 'DiscreteDist']
 
@@ -40,7 +40,7 @@ class ContDist(ABC):
     """Base class to visualize continuous probability distributions."""
 
     def __init__(self) -> None:
-        self.population: MB[DataSet] = MB()
+        self.population: MayBe[DataSet] = MayBe()
         self.samples: list[DataSet] = []
 
     @abstractmethod
@@ -86,7 +86,7 @@ class DiscreteDist(ABC):
     """Base class to visuale discrete probability distributions."""
 
     def __init__(self) -> None:
-        self.population: MB[DataSet] = MB()
+        self.population: MayBe[DataSet] = MayBe()
         self.samples: list[DataSet] = []
 
     @abstractmethod
