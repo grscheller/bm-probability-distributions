@@ -36,12 +36,13 @@ __all__ = ['DataSet', 'DataSets']
 class DataSet:
     """Class containing sample or population data.
 
-    * all data internally stored as floats (even integer data)
-    * data sorted smallest to largest
-    * methods provided to
-      * read in data from a file
-      * computing data statistics
-      * add or remove data
+    - all data internally stored as floats (even integer data)
+    - data sorted smallest to largest
+    - methods provided to
+
+      - read in data from a file
+      - computing data statistics
+      - add or remove data
 
     """
 
@@ -51,10 +52,12 @@ class DataSet:
 
         The text file should
 
-        * have one number (float) per line and calculate statistics
-          * if `sample` is true (default), calculate sample stats
-          * if `sample` is false, calculate population stats
-        * blank lines and lines beginning with '#' are ignored
+        - have one number (float) per line and calculate statistics
+
+          - if `sample` is true (default), calculate sample stats
+          - if `sample` is false, calculate population stats
+
+        - blank lines and lines beginning with '#' are ignored
 
         """
         data: list[float] = []
@@ -104,8 +107,8 @@ class DataSet:
     def _calculate_stdev(self) -> MayBe[float]:
         """From the data set, calculate & return the stdev if it exists.
 
-        * If sample is True, calculate a sample standard deviation.
-        * If sample is False, calculate a population standard deviation.
+        - If sample is True, calculate a sample standard deviation.
+        - If sample is False, calculate a population standard deviation.
 
         """
         data = self._data
@@ -123,7 +126,7 @@ class DataSet:
     def _calculate_quartiles(self) -> MayBe[tuple[float, float, float]]:
         """Calculate first, second (median), and third quartiles
 
-        * using the "trimmed mid-range" of the data
+        Using the "trimmed mid-range" of the data.
 
         """
         n = self._size
@@ -201,11 +204,13 @@ class DataSet:
 class DataSets:
     """Base class for managing data sets.
 
-    * data sets can be samples or populations
-    * methods provided to
-      * add or remove data sets
-      * plot data sets
-    * how they are related to each other is up to the user of the class
+    - data sets can be samples or populations
+    - methods provided to
+
+      - add or remove data sets
+      - plot data sets
+
+    - how they are related to each other is up to the user of the class
 
     """
 

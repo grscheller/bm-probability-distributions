@@ -16,13 +16,6 @@
 # Udacity® (https://www.udacity.com/)
 #
 
-"""### Module bm.probability_distributions.normal
-
-A normal (Gaussian) distribution class, derived from a Udacity
-exercise template.
-
-"""
-
 from __future__ import annotations
 
 from typing import Never
@@ -44,8 +37,8 @@ class Normal(ContDist):
     ```
     where
 
-    * μ = mu = mean value of the distribution
-    * σ = sigma = standard deviation of the distribution
+    - μ = mu = mean value of the distribution
+    - σ = sigma = standard deviation of the distribution
 
     """
 

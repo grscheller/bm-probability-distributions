@@ -83,7 +83,7 @@ class ContDist(ABC):
 
 
 class DiscreteDist(ABC):
-    """Base class to visuale discrete probability distributions."""
+    """Base class to visualize discrete probability distributions."""
 
     def __init__(self) -> None:
         self.population: MayBe[DataSet] = MayBe()

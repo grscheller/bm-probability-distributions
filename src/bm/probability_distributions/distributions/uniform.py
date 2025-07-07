@@ -16,12 +16,6 @@
 # Udacity® (https://www.udacity.com/)
 #
 
-"""### Module bm.probability_distributions.distributions.uniform
-
-Uniform distribution class - derived from a Udacity exercise template.
-
-"""
-
 from __future__ import annotations
 
 from typing import Never

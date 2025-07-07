@@ -16,7 +16,9 @@
 # Udacity® (https://www.udacity.com/)
 #
 
-"""### Module bm.probability_distributions.binomial
+"""
+Binomial Distribution
+---------------------
 
 A binomial distribution class, derived from a Udacity
 exercise template.
@@ -25,7 +27,7 @@ exercise template.
 
 from __future__ import annotations
 
-from typing import Callable, Never, reveal_type
+from typing import Callable, Never
 from math import comb, sqrt
 import matplotlib.pyplot as plt
 from ..datasets import DataSet
@@ -42,11 +44,11 @@ class Binomial(DiscreteDist):
 
     Attributes (some inherited):
 
-    * mean (float) representing the mean value of the distribution
-    * stdev (float) representing the standard deviation of the distribution
-    * data  extracted from a data file (taken to be a population)
-    * `p` (float) representing the probability of an event occurring
-    * `n` (int) the total number of trials
+    - mean (float) representing the mean value of the distribution
+    - stdev (float) representing the standard deviation of the distribution
+    - data  extracted from a data file (taken to be a population)
+    - `p` (float) representing the probability of an event occurring
+    - `n` (int) the total number of trials
 
     """
 
@@ -121,9 +123,11 @@ class Binomial(DiscreteDist):
     def plot_bar_pdf(self) -> tuple[list[int], list[float]]:
         """Function to plot the pdf of the binomial distribution.
 
-        Returns:
-        * list: x values used for the pdf plot
-        * list: y values used for the pdf plot
+        :return:
+            A tuple containing
+
+            - list[int]: x values used for the pdf plot
+            - list[float]: y values used for the pdf plot
 
         """
 
