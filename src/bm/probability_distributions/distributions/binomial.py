@@ -40,15 +40,15 @@ class Binomial(DiscreteDist):
     """Class for visualizing data as Binomial distributions.
 
     The binomial distribution represents the number of events with
-    probability `p` happening in `n` numbers of trials.
+    probability ``p`` happening in ``n`` numbers of trials.
 
     Attributes (some inherited):
 
-    - mean (float) representing the mean value of the distribution
-    - stdev (float) representing the standard deviation of the distribution
-    - data  extracted from a data file (taken to be a population)
-    - `p` (float) representing the probability of an event occurring
-    - `n` (int) the total number of trials
+    - ``mean`` (float) representing the mean value of the distribution
+    - ``stdev`` (float) representing the standard deviation of the distribution
+    - ``data``  extracted from a data file (taken to be a population)
+    - ``p`` (float) representing the probability of an event occurring
+    - ``n`` (int) the total number of trials
 
     """
 

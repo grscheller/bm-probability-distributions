@@ -30,15 +30,14 @@ __all__ = ['Normal']
 class Normal(ContDist):
     """Class for visualizing Normal distributions.
 
-    The Normal, also called Gaussian, distribution is a continuous probability
-    distribution with probability density function
-    ```
-       f(x) = (1/√(2πσ²))exp(-(x-μ)²/2σ²)
-    ```
-    where
+    .. note::
+        The Normal, also called Gaussian, distribution is a continuous probability
+        distribution with probability density function
 
-    - μ = mu = mean value of the distribution
-    - σ = sigma = standard deviation of the distribution
+        f(x) = (1/√(2πσ²))exp(-(x-μ)²/2σ²)
+        where
+          μ = mu = mean value of the distribution
+          σ = sigma = standard deviation of the distribution
 
     """
 

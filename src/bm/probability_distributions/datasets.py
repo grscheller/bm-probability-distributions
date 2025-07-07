@@ -54,8 +54,8 @@ class DataSet:
 
         - have one number (float) per line and calculate statistics
 
-          - if `sample` is true (default), calculate sample stats
-          - if `sample` is false, calculate population stats
+          - if sample is true (default), calculate sample stats
+          - if sample is false, calculate population stats
 
         - blank lines and lines beginning with '#' are ignored
 
@@ -107,8 +107,8 @@ class DataSet:
     def _calculate_stdev(self) -> MayBe[float]:
         """From the data set, calculate & return the stdev if it exists.
 
-        - If sample is True, calculate a sample standard deviation.
-        - If sample is False, calculate a population standard deviation.
+        - If sample is True, calculate a sample standard deviation
+        - If sample is False, calculate a population standard deviation
 
         """
         data = self._data
