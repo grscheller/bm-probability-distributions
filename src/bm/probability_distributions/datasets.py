@@ -28,7 +28,7 @@ from __future__ import annotations
 import math
 from collections.abc import Iterator
 from typing import Never
-from pythonic_fp.containers.maybe import MayBe
+from pythonic_fp.fptools.maybe import MayBe
 
 __all__ = ['DataSet', 'DataSets']
 

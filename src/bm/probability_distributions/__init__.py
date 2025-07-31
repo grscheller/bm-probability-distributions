@@ -12,32 +12,27 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-"""
-Visualize probability distributions
-===================================
+"""Visualize probability distributions
 
 Distributions can be compared to either sample or population data. Package
 originally derived from a Udacity exercise.
 
-Class Dataset
--------------
-
-- bm.distributions.dataset
-
-  - contains either sample or population data
-  - generates sample/population statistics
-
-Abstract Class Distribution
----------------------------
-
-- bm.probability_distributions.distribution
-
-  - represents a probability distribution
-
-Concrete Distributions
-----------------------
-
-- bm.probability_distributions.distributions
+- Class Dataset
+  
+  - bm.distributions.dataset
+  
+    - contains either sample or population data
+    - generates sample/population statistics
+  
+- Abstract Class Distribution
+  
+  - bm.probability_distributions.distribution
+  
+    - represents a probability distribution
+  
+- Concrete Distributions
+  
+  - bm.probability_distributions.distributions
 
 """
 

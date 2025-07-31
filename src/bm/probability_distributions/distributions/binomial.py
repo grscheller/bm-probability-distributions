@@ -27,7 +27,7 @@ exercise template.
 
 from __future__ import annotations
 
-from typing import Callable, Never
+from typing import Never
 from math import comb, sqrt
 import matplotlib.pyplot as plt
 from ..datasets import DataSet

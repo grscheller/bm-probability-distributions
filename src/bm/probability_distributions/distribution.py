@@ -31,7 +31,7 @@ from abc import ABC, abstractmethod
 from typing import Self, Never
 import matplotlib.pyplot as plt
 from .datasets import DataSet
-from pythonic_fp.containers.maybe import MayBe
+from pythonic_fp.fptools.maybe import MayBe
 
 __all__ = ['ContDist', 'DiscreteDist']
 
