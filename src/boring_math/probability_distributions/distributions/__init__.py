@@ -16,12 +16,12 @@
 Continuous Distributions
 ========================
 
-- Normal  bm.probability_distributions.distributions.normal
-- Uniform  bm.probability_distributions.distributions.uniform
+- Normal  boring_math.probability_distributions.distributions.normal
+- Uniform  boring_math.probability_distributions.distributions.uniform
 
 Discrete Distributions
 ======================
 
-- Binomial: bm.probability_distributions.distributions.binomial
+- Binomial: boring_math.probability_distributions.distributions.binomial
 
 """

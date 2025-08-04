@@ -19,20 +19,20 @@ originally derived from a Udacity exercise.
 
 - Class Dataset
   
-  - bm.distributions.dataset
+  - boring_math.probability_distributions.dataset
   
     - contains either sample or population data
     - generates sample/population statistics
   
 - Abstract Class Distribution
   
-  - bm.probability_distributions.distribution
+  - boring_math.probability_distributions.distribution
   
     - represents a probability distribution
   
 - Concrete Distributions
   
-  - bm.probability_distributions.distributions
+  - boring_math.probability_distributions.distributions
 
 """
 

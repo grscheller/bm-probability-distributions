@@ -16,7 +16,7 @@
 # Udacity® (https://www.udacity.com/)
 #
 
-"""Module bm.probability_distributions.distribution
+"""Module boring_math.probability_distributions.distribution
 
 Providing base classes to visualize probability distributions.
 

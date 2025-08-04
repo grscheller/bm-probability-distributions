@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from bm.probability_distributions.datasets import DataSet
+from boring_math.probability_distributions.datasets import DataSet
 
 class Test_dataset:
     def test_data(self) -> None:
