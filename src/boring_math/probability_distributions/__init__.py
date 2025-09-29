@@ -18,21 +18,21 @@ Distributions can be compared to either sample or population data. Package
 originally derived from a Udacity exercise.
 
 - Class Dataset
-  
+
   - boring_math.probability_distributions.dataset
-  
+
     - contains either sample or population data
     - generates sample/population statistics
-  
+
 - Abstract Class Distribution
-  
+
   - boring_math.probability_distributions.distribution
-  
+
     - represents a probability distribution
-  
+
 - Concrete Distributions
-  
-  - boring_math.probability_distributions.distributions
+
+  - bm.probability_distributions.distributions
 
 """
 

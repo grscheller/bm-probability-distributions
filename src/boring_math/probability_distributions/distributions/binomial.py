@@ -27,7 +27,7 @@ exercise template.
 
 from __future__ import annotations
 
-from typing import Never
+from typing import final
 from math import comb, sqrt
 import matplotlib.pyplot as plt
 from ..datasets import DataSet
@@ -145,7 +145,7 @@ class Binomial(DiscreteDist):
 
         return xs, ys
 
-    def __add__(self, other: Binomial) -> Binomial | Never:
+    def __add__(self, other: Binomial) -> Binomial:
         """Add together two Binomial distributions with equal p."""
         if type(other) is not Binomial:
             msg = 'A binomial distribution cannot be added to a {}'

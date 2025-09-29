@@ -117,7 +117,9 @@ class DataSet:
             mean = self._mean.get()
             if self._sample:
                 if n > 1:
-                    return MayBe(math.sqrt(sum(((x - mean) ** 2 for x in data)) / (n - 1)))
+                    return MayBe(
+                        math.sqrt(sum(((x - mean) ** 2 for x in data)) / (n - 1))
+                    )
             else:
                 if n > 0:
                     return MayBe(math.sqrt(sum(((x - mean) ** 2 for x in data)) / n))

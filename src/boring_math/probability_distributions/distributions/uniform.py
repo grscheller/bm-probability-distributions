@@ -16,9 +16,7 @@
 # Udacity® (https://www.udacity.com/)
 #
 
-from __future__ import annotations
-
-from typing import Never
+from typing import final, Self
 from math import sqrt
 import matplotlib.pyplot as plt
 from ..datasets import DataSet
@@ -27,6 +25,7 @@ from ..distribution import ContDist
 __all__ = ['Uniform']
 
 
+@final
 class Uniform(ContDist):
     """Class for visualizing Normal distributions.
 
@@ -80,7 +79,7 @@ class Uniform(ContDist):
         else:
             return 1
 
-    def __add__(self, other: Uniform) -> Uniform | Never:
+    def __add__(self, other: Self) -> Self:
         """Add together two compatible Uniform distributions."""
         if type(other) is not Uniform:
             msg = 'A Uniform distribution cannot be added to a {}'

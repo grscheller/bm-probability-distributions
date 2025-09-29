@@ -16,9 +16,7 @@
 # Udacity® (https://www.udacity.com/)
 #
 
-from __future__ import annotations
-
-from typing import Never
+from typing import final, Self
 from math import erf, exp, pi, sqrt
 import matplotlib.pyplot as plt
 from ..datasets import DataSet
@@ -27,6 +25,7 @@ from ..distribution import ContDist
 __all__ = ['Normal']
 
 
+@final
 class Normal(ContDist):
     """Class for visualizing Normal distributions.
 
@@ -68,7 +67,7 @@ class Normal(ContDist):
         c = self.sigma * sqrt(2)
         return 0.5 * (1 + erf((x - mu) / c))
 
-    def __add__(self, other: Normal) -> Normal | Never:
+    def __add__(self, other: Self) -> Self:
         """Add together two Normal distributions."""
         if type(other) is not Normal:
             msg = 'A Normal distribution cannot be added to a {}'

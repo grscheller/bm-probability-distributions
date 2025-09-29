@@ -90,16 +90,10 @@ class DiscreteDist(ABC):
         self.samples: list[DataSet] = []
 
     @abstractmethod
-    def pdf(self, kf: float) -> float:
-        """Probability distribution function."""
-        ...
+    def pdf(self, kf: float) -> float: ...
 
     @abstractmethod
-    def cdf(self, kf: float) -> float:
-        """Cumulative distribution function."""
-        ...
+    def cdf(self, kf: float) -> float: ...
 
     @abstractmethod
-    def __add__(self, other: Self) -> Self | Never:
-        """Add together two compatible distributions."""
-        ...
+    def __add__(self, other: Self) -> Self: ...
