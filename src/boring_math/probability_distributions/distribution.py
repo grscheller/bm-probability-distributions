@@ -25,11 +25,9 @@ Providing base classes to visualize probability distributions.
 
 """
 
-from __future__ import annotations
-
 from abc import ABC, abstractmethod
 from typing import Self, Never
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
 from .datasets import DataSet
 from pythonic_fp.fptools.maybe import MayBe
 

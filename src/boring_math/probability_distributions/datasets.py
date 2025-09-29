@@ -16,23 +16,22 @@
 # Udacity® (https://www.udacity.com/)
 #
 
-"""Module for - managing sample/population data
+"""Module for managing sample/population data
 
 - *class* DataSet: contains sample or population data
 - *class* DataSets: base class for managing data sets
 
 """
 
-from __future__ import annotations
-
 import math
 from collections.abc import Iterator
-from typing import Never
+from typing import final, Never, Self
 from pythonic_fp.fptools.maybe import MayBe
 
 __all__ = ['DataSet', 'DataSets']
 
 
+@final
 class DataSet:
     """Class containing sample or population data.
 
@@ -46,8 +45,8 @@ class DataSet:
 
     """
 
-    @staticmethod
-    def read_data_from_file(file_name: str, sample: bool = False) -> MayBe[DataSet]:
+    @classmethod
+    def read_data_from_file(cls, file_name: str, sample: bool = False) -> MayBe[Self]:
         """Read in data from a text file, return a DataSet object.
 
         The text file should

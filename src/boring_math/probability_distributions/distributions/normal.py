@@ -18,8 +18,8 @@
 
 from typing import final, Self
 from math import erf, exp, pi, sqrt
-import matplotlib.pyplot as plt
-from ..datasets import DataSet
+# import matplotlib.pyplot as plt
+# from ..datasets import DataSet
 from ..distribution import ContDist
 
 __all__ = ['Normal']
