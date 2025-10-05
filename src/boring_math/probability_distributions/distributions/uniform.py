@@ -30,14 +30,19 @@ class Uniform(ContDist):
     """Class for visualizing Normal distributions.
 
     .. note::
+
         The Uniform distribution is a continuous probability
         distribution with probability density function
 
-           f(x) = 1/(b-a)  for a < x < b
-           f(x) = 0        otherwise
+        ``f(x) = 1/(b-a)`` for ``a < x < b``
+
+        ``f(x) = 0`` otherwise
+
         where
-          μ = mu = (a+b)/2 = mean value
-          σ = sigma = (b-a)/2√3 = standard deviation
+
+        ``μ = mu = (a+b)/2 =`` mean value
+
+        ``σ = sigma = (b-a)/2√3 =`` standard deviation
 
     """
 
