@@ -16,9 +16,9 @@ Package to generate and visualize probability distributions.
 
   - Binomial: ``boring_math.probability_distributions.binomial``
 
-This PyPI project is part of of the grscheller
-`boring-math namespace projects
-<https://github.com/grscheller/boring-math/blob/main/README.md>`_
+This pypi project is part of the
+`boring math
+<https://grscheller.github.io/boring-math>`_ projects.
 
 Documentation
 -------------
